@@ -90,7 +90,7 @@ app.delete('/entries/:editId', (req, res) => {
 
 
 app.use(express.static(path.join(__dirname, '../diary-frontend/dist')));
-app.get('*', (req, res) => {
+app.get('/(.*)', (req, res) => {
     res.sendFile(path.join(__dirname, '../diary-frontend/dist/index.html'));
 });
 const PORT = process.env.PORT || 3000;

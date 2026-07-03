@@ -1,0 +1,278 @@
+/* THIS PART IS TAKEN AND MODIFIED FROM ONLInE WEBSITE WHERE I GOT THIS DESIGN TEMPLATE FROM.*/
+
+body {
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  margin: 0; 
+}
+
+/* The Main Wrapper */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #c30000;
+}
+/* The Animation Trigger: What happens when you hover or click */
+.container:hover .top:before,
+.container:hover .top:after,
+.container:hover .bottom:before,
+.container:hover .bottom:after,
+.container:active .top:before,
+.container:active .top:after,
+.container:active .bottom:before,
+.container:active .bottom:after {
+  margin-left: 200px;
+  transform-origin: -200px 50%;
+  transition-delay: 0s;
+}
+
+.container:hover .center,
+.container:active .center {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+/* The Colored Background Panels */
+.top:before,
+.top:after,
+.bottom:before,
+.bottom:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  top: 50%;
+  left: 50%;
+  margin-top: -100vmax;
+  transform-origin: 0 50%;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  z-index: 10;
+  opacity: 0.65;
+  transition-delay: 0.2s;
+}
+
+.top:before {
+  transform: rotate(45deg);
+  background: #e46569;
+}
+
+.top:after {
+  transform: rotate(135deg);
+  background: #ecaf81;
+}
+
+.bottom:before {
+  transform: rotate(-45deg);
+  background: #60b8d4;
+}
+
+.bottom:after {
+  transform: rotate(-135deg);
+  background: #3745b5;
+}
+
+/* The Center Form Box */
+.center {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.445, 0, 0, 1);
+  color: #000000;
+}
+
+/* Styling the inputs inside the center box */
+.center input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+/* Styling the buttons inside the center box */
+.center button {
+  width: 100%;
+  padding: 15px;
+  margin: 15px;
+  /* border: none; */
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  /* font-family: inherit; */
+  font-weight: bold;
+}
+
+.center button:hover {
+  background-color: #555;
+}
+
+
+
+
+
+/* THIS PART IS COMPLETELY CODED BY ME.*/
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 7px 6px #d7c8a7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 0px 10px 20px;
+}
+
+.nav h2 {
+  color: #790808;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background-color: #c8c1b6;
+  box-shadow: 4px 0 15px #c1b885;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 3;
+  padding: 25px;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebarnav {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.sidebar h3 {
+  margin: 0;
+  color: #c33737;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px;
+}
+
+.entry-card {
+  padding: 14px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #f6eee3;
+}
+
+.sidebar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.menu-btn {
+  font-size: 24px;
+  margin-right: 15px;
+  padding: 0;
+  border: none;
+}
+
+
+
+.dashboard {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #f6eee3;
+  opacity: 1;
+  background-size: 20px 20px;
+  background-image:  repeating-linear-gradient(0deg, #e5decf, #e5decf 1px, #f6eee3 1px, #f6eee3); /*THIS PART IS ALSO TAKEN AND MODIFIED*/
+}
+
+.diary-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 320px;
+  max-width: 90vw;
+}
+
+.btn-primary{
+  background-color: #56a859;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.btn-primary:hover {
+  background-color: #4e9c4f;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  font-size: 9px;
+  position: relative;
+  left: -3%;
+  height: fit-content;
+  width: fit-content;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-edit {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  font-size: 9px;
+  margin-right: 5px;
+}
+
+.btn-edit:hover {
+  background-color: #2980b9;
+}

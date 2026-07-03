@@ -17,7 +17,7 @@ function App(){
   
   const handleAuth = async function() {
     const endpoint = regis ? "/register" : "/login";
-    const res = await fetch("http://localhost:3000" + endpoint, {
+    const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
@@ -37,7 +37,7 @@ function App(){
 
   const fetchEntries = async function(){
     if (!user) return;
-    const res = await fetch(`http://localhost:3000/${user}/entries`, {
+    const res = await fetch(`/${user}/entries`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
     });
@@ -51,7 +51,7 @@ function App(){
 
   const saveEntry = async () => {
     const method = editId ? 'PUT' : 'POST';
-    const url = editId ? `http://localhost:3000/${user}/entries/editentry/${editId}` : `http://localhost:3000/${user}/entries/newentry`;
+    const url = editId ? `/${user}/entries/editentry/${editId}` : `/${user}/entries/newentry`;
     await fetch(url, {
       method: method,
       headers: { 'Content-Type': 'application/json' },
@@ -64,7 +64,7 @@ function App(){
   };
 
   const deleteEntry = async (id) => {
-      await fetch(`http://localhost:3000/entries/${id}`, { method: 'DELETE' });
+      await fetch(`/entries/${id}`, { method: 'DELETE' });
       fetchEntries();
   };
 

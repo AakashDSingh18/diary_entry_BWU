@@ -1,12 +1,9 @@
-/* THIS PART IS TAKEN AND MODIFIED FROM ONLInE WEBSITE WHERE I GOT THIS DESIGN TEMPLATE FROM.*/
-
 body {
   min-height: 100vh;
   font-family: 'Raleway', sans-serif;
   margin: 0; 
 }
 
-/* The Main Wrapper */
 .container {
   display: flex;
   flex-direction: column;
@@ -19,7 +16,6 @@ body {
   display: flex;
   border: 2px solid #c30000;
 }
-/* The Animation Trigger: What happens when you hover or click */
 .container:hover .top:before,
 .container:hover .top:after,
 .container:hover .bottom:before,
@@ -39,7 +35,6 @@ body {
   transition-delay: 0.2s;
 }
 
-/* The Colored Background Panels */
 .top:before,
 .top:after,
 .bottom:before,
@@ -79,7 +74,6 @@ body {
   background: #3745b5;
 }
 
-/* The Center Form Box */
 .center {
   position: absolute;
   width: 300px;
@@ -94,7 +88,6 @@ body {
   color: #000000;
 }
 
-/* Styling the inputs inside the center box */
 .center input {
   width: 100%;
   padding: 15px;
@@ -102,16 +95,13 @@ body {
   border-radius: 3px;
 }
 
-/* Styling the buttons inside the center box */
 .center button {
   width: 100%;
   padding: 15px;
   margin: 15px;
-  /* border: none; */
   background-color: #333;
   color: white;
   cursor: pointer;
-  /* font-family: inherit; */
   font-weight: bold;
 }
 
@@ -119,11 +109,6 @@ body {
   background-color: #555;
 }
 
-
-
-
-
-/* THIS PART IS COMPLETELY CODED BY ME.*/
 
 input, textarea {
   width: 100%;
@@ -226,7 +211,7 @@ button {
   background-color: #f6eee3;
   opacity: 1;
   background-size: 20px 20px;
-  background-image:  repeating-linear-gradient(0deg, #e5decf, #e5decf 1px, #f6eee3 1px, #f6eee3); /*THIS PART IS ALSO TAKEN AND MODIFIED*/
+  background-image:  repeating-linear-gradient(0deg, #e5decf, #e5decf 1px, #f6eee3 1px, #f6eee3);
 }
 
 .diary-section {

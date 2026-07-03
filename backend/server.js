@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -87,4 +88,10 @@ app.delete('/entries/:editId', (req, res) => {
     res.json({ message: "Entry deleted successfully." });
 })
 
-app.listen(3000);
+
+app.use(express.static(path.join(__dirname, '../diary-frontend/dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../diary-frontend/dist/index.html'));
+});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT);
